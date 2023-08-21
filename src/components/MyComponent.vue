@@ -2,7 +2,7 @@
  <div class="root">
    <div class="signin">
    <form action="#" @submit.prevent="checkFormSignIn" method="post">
-     <h1>Sign In</h1>
+     <h1>SignUp</h1>
      <div class="container">
        <div class="input-box">
          <label for="email"><b>Email</b></label><span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
@@ -13,7 +13,7 @@
          <input name="password" type="password" placeholder="Enter Password" v-model.trim="formSignIn.password" required>
        </div>
        <p id="failedLogin"></p>
-       <button type="submit" class="btn">Sign in</button>
+       <button type="submit" class="btn" v-on:click="this.check">Sign in</button>
        <div class="register">
          <a href="#" class="register" v-on:click="toSignUp">Sign up</a>
        </div>

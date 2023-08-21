@@ -6,6 +6,7 @@ import {db} from './main.js'
 
 
 
+
 export default {
     name: 'MyComponent',
     setup () {
@@ -34,6 +35,7 @@ export default {
         }
     },
     created() {
+        console.log("AAAAAAAAAAAAAAA");
         this.getUsers();
     },
     validations () {
@@ -135,7 +137,10 @@ export default {
         async getUsers(){
             const q=query(collection(db,'users'),orderBy('name'));
             const querySnap=await getDocs(q);
+
+
             querySnap.forEach((doc)=>{
+                console.log(doc.data())
                 this.users.push(doc.data());
             })
         },
